@@ -1,10 +1,10 @@
 import MovieCard from "../components/MovieCard"
 import { useState } from "react"
-
+import '../css/Home.css'
 function Home () {
 
     const [searchQuery, setSearchQuery] = useState("");
-    
+
     const movies = [
         {id:1,title:"GTA VI", release_date : "2025"},
         {id:2,title:"GTA V", release_date : "2013"},
@@ -17,9 +17,9 @@ function Home () {
     }
     return (
     <div className="home">
-        <form onSubmit={handleSearch} className="search-from">
+        <form onSubmit={handleSearch} className="search-form">
             <input onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery} type="text" placeholder="Search for Movies ..." className="search-input" />
-            <button type="submit" className="search-btn">Search </button>
+            <button type="submit" className="search-button">Search </button>
         </form>
         <div className="movies-grid">
             {movies.map((movie) => 
